@@ -1,0 +1,6 @@
+suppressPackageStartupMessages(library(magrittr))
+suppressPackageStartupMessages(library(data.table))
+suppressPackageStartupMessages(library(purrr))
+suppressPackageStartupMessages(library(ggplot2))
+suppressPackageStartupMessages(library(glue))
+suppressPackageStartupMessages(library(shiny))

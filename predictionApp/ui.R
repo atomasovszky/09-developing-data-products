@@ -3,6 +3,7 @@ library(shiny)
 shinyUI(
 
     fluidPage(
+        titlePanel("Predict horsepower from MPG"),
         sidebarPanel(
             sliderInput(
                 "sliderMPG", "What is the MPG of the car", 10, 35, 20

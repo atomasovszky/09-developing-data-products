@@ -38,3 +38,12 @@ stocks <- as.data.frame(EuStockMarkets) %>%
 
 plot_ly(stocks, x = ~time, y = ~price, color = ~index, type = "scatter", mode = "lines")
 
+# simpler graphs
+plot_ly(x = ~precip, type = "histogram")
+plot_ly(iris, y = ~Petal.Length, color = ~Species, type = "box")
+
+terrain1 <- matrix(rnorm(100*100), nrow = 100, ncol = 100)
+plot_ly(z = terrain1, type = "heatmap")
+
+terrain2 <- matrix(sort(rnorm(100*100)), nrow = 100, ncol = 100)
+plot_ly(z = terrain2, type = "surface")

@@ -1,14 +1,21 @@
 library(shiny)
 library(miniUI)
 
-myFirstGadget <- function() {
+multiplierGadget <- function(numbers1, numbers2) {
+    
     ui <- miniPage(
-        gadgetTitleBar("My first gadget")
+        gadgetTitleBar("Multiply two numbers"),
+        miniContentPanel(
+            selectInput("num1", "First number", choices = numbers1),
+            selectInput("num2", "Second number", choices = numbers2)
+        )
     )
 
     server <- function(input, output, session) {
         observeEvent(input$done, {
-            stopApp()
+            num1 <- as.numeric(input$num1)
+            num2 <- as.numeric(input$num2)
+            stopApp(num1 * num2)
         })
     }
     

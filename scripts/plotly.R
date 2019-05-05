@@ -22,3 +22,19 @@ pressue <- rnorm(100)
 dtime <- 1:100
 plot_ly(x = ~temp, y = ~pressue, z = ~dtime,
         type = "scatter3d", color = ~temp)
+
+# line plots
+data(airmiles)
+plot_ly(x = time(airmiles), y = airmiles, type = "scatter", mode = "line")
+
+# multiline
+library(tidyr)
+library(dplyr)
+data("EuStockMarkets")
+
+stocks <- as.data.frame(EuStockMarkets) %>%
+  gather(index, price) %>%
+  mutate(time = rep(time(EuStockMarkets), 4))
+
+plot_ly(stocks, x = ~time, y = ~price, color = ~index, type = "scatter", mode = "lines")
+

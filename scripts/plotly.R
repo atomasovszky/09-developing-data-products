@@ -47,3 +47,15 @@ plot_ly(z = terrain1, type = "heatmap")
 
 terrain2 <- matrix(sort(rnorm(100*100)), nrow = 100, ncol = 100)
 plot_ly(z = terrain2, type = "surface")
+
+
+# ggplotly
+library(ggplot2)
+set.seed(100)
+d <- diamonds[sample(nrow(diamonds), 1000), ]
+p <- ggplot(d, aes(carat, price)) +
+    geom_point(aes(text = paste0("Clarity: ", clarity)), size = 4) +
+    geom_smooth(aes(color = cut, fill = cut)) +
+    facet_wrap(~cut)
+gg <- ggplotly(p)
+gg

@@ -1,0 +1,27 @@
+---
+title: "RMarkdown-Leaflet assignment"
+author: "atomasovszky"
+date: "7/8/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(leaflet); library(data.table)
+```
+
+## My alma mater
+```{r map, warning = FALSE, message = FALSE}
+elteIcon <- makeIcon(
+    iconUrl = "http://honlap.eotvos.elte.hu/wp-content/uploads/2016/07/logo.png",
+    iconWidth = 31*215/230, iconHeight = 31,
+    iconAnchorX = 31*215/230/2, iconAnchorY = 16
+)
+
+elteUrl <- "<a href='https://tatk.elte.hu/en/'>Eötvös Loránd University Faculty of Social Sciences</a>"
+
+data.table(lat = 47.474108, lng = 19.062309, name = "My alma mater") %>%
+    leaflet() %>%
+    addTiles() %>%
+    addMarkers(icon = elteIcon, popup = elteUrl)
+```

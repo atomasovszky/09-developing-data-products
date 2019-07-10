@@ -1117,7 +1117,7 @@ a.UNIT.convert&&("GEOGCS"===a.type?a.DATUM&&a.DATUM.SPHEROID&&(a.to_meter=parseF
 		// See discussion in https://github.com/kartena/Proj4Leaflet/pull/147
 		proj4 = proj4.default;
 	}
-
+ 
 	L.Proj = {};
 
 	L.Proj._isProj4Obj = function(a) {
@@ -4255,8 +4255,8 @@ $(document).ready(function () {
 <h2>My alma mater</h2>
 <pre class="r"><code>elteIcon &lt;- makeIcon(
     iconUrl = &quot;http://honlap.eotvos.elte.hu/wp-content/uploads/2016/07/logo.png&quot;,
-    iconWidth = 31*215/230, iconHeight = 31,
-    iconAnchorX = 31*215/230/2, iconAnchorY = 16
+    iconWidth = 62*215/230, iconHeight = 62,
+    iconAnchorX = 62*215/230/2, iconAnchorY = 31
 )
 
 elteUrl &lt;- &quot;&lt;a href='https://tatk.elte.hu/en/'&gt;Eötvös Loránd University Faculty of Social Sciences&lt;/a&gt;&quot;
@@ -4265,8 +4265,8 @@ data.table(lat = 47.474108, lng = 19.062309, name = &quot;My alma mater&quot;) %
     leaflet() %&gt;%
     addTiles() %&gt;%
     addMarkers(icon = elteIcon, popup = elteUrl)</code></pre>
-<div id="htmlwidget-ca9d6a2531b45633504e" style="width:672px;height:480px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ca9d6a2531b45633504e">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[47.474108,19.062309,{"iconUrl":{"data":"http://honlap.eotvos.elte.hu/wp-content/uploads/2016/07/logo.png","index":0},"iconWidth":28.9782608695652,"iconHeight":31,"iconAnchorX":14.4891304347826,"iconAnchorY":16},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"<a href='https://tatk.elte.hu/en/'>Eötvös Loránd University Faculty of Social Sciences<\/a>",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[47.474108,47.474108],"lng":[19.062309,19.062309]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-676a229959bbec270f90" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-676a229959bbec270f90">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addMarkers","args":[47.474108,19.062309,{"iconUrl":{"data":"http://honlap.eotvos.elte.hu/wp-content/uploads/2016/07/logo.png","index":0},"iconWidth":57.9565217391304,"iconHeight":62,"iconAnchorX":28.9782608695652,"iconAnchorY":31},null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"<a href='https://tatk.elte.hu/en/'>Eötvös Loránd University Faculty of Social Sciences<\/a>",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[47.474108,47.474108],"lng":[19.062309,19.062309]}},"evals":[],"jsHooks":[]}</script>
 </div>
 
 

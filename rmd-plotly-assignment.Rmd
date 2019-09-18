@@ -5,6 +5,7 @@ date: "18/09/2019"
 output:
     revealjs::revealjs_presentation:
         transition: fade
+        output: html
 
 ---
 

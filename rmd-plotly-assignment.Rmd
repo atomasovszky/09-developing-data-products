@@ -1,0 +1,36 @@
+---
+title: "R Markdown Presentation & Plotly"
+author: "atomasovszky"
+date: "18/09/2019"
+output:
+    revealjs::revealjs_presentation:
+        transition: fade
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly); library(data.table)
+```
+
+# Empirical distribution of random numbers taken from different distributions
+
+## Normal distribution
+```{r normal, warning = FALSE, message = FALSE}
+dt <- data.table(x = rnorm(1000))
+plot_ly(dt, x = ~x, type = "histogram")
+```
+
+## Exponential distribution
+```{r exp, warning = FALSE, message = FALSE}
+dt <- data.table(x = rexp(1000, 1/5))
+plot_ly(dt, x = ~x, type = "histogram")
+```
+
+## Poisson distribution
+```{r pois, warning = FALSE, message = FALSE}
+dt <- data.table(x = rpois(1000, 1/2))
+plot_ly(dt, x = ~x, type = "histogram")
+```
+
+# Thank you

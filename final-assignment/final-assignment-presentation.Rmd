@@ -1,0 +1,73 @@
+---
+title: "Shiny app for the regression analysis of cars' average consumption"
+output:
+    revealjs::revealjs_presentation:
+        transition: fade
+        output: html
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+source("global.R")
+
+mtcars <- mtcars %>%
+    as.data.table() %>%
+    .[, `:=`(
+        vs   = as.factor(vs),
+        am   = as.factor(am),
+        cyl  = as.factor(cyl),
+        gear = as.factor(gear),
+        carb = as.factor(carb)
+    )]
+
+continuous_variables <- c("mpg", "disp", "hp", "drat", "wt", "qsec")
+categorical_variables <- setdiff(names(mtcars), continuous_variables)
+```
+
+
+## What's the app for
+
+- look at the distribution of variables
+- help to find relevant features
+- create and diagnose final linear model
+
+## Distribuion of categorical variables
+```{r categorical}
+    mtcars %>%
+        .[, .SD, .SDcols = categorical_variables] %>%
+        setnames(names(.), getPrettyNames(categorical_variables)) %>%
+        melt(measure.vars = getPrettyNames(categorical_variables)) %>%
+        ggplot(aes(x = value)) +
+            geom_bar(alpha = .75) +
+            coord_flip() +
+            geom_label(stat = "count", aes(label = ..count..), size = 2, family = "Roboto Slab") +
+            facet_wrap(~variable, scales = "free") +
+            labs(x = "", y = "") +
+            theme_bw(base_family = "Roboto Slab")
+```
+
+## Distribution of continuous variables
+```{r continuous}
+    mtcars %>%
+        .[, .SD, .SDcols = continuous_variables] %>%
+        setnames(names(.), getPrettyNames(continuous_variables)) %>%
+        melt(measure.vars = getPrettyNames(continuous_variables)) %>%
+        ggplot(aes(x = value)) +
+            geom_histogram(bins = 10, alpha = .75) +
+            facet_wrap(~variable, scales = "free") +
+            labs(x = "", y = "") +
+            theme_bw(base_family = "Roboto Slab")
+```
+
+## Avg. miles per gallon vs horsepower with 2nd degree polynomial
+```{r lm}
+    mtcars[, lapply(.SD, as.numeric)] %>%
+        ggplot(aes_string(x = "hp", y = "mpg")) +
+        geom_point(size = 2, alpha = .5) +
+        labs(x = "hp", y = "mpg") +
+        stat_smooth(method = "lm", se = FALSE, formula = y ~ poly(x, 2))
+```
+
+
+# Thank you

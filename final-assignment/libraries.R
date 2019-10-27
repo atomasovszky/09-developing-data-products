@@ -8,3 +8,5 @@ suppressPackageStartupMessages(if(!require("swirl")) {install.packages("swirl");
 suppressPackageStartupMessages(if(!require("datasets")) {install.packages("datasets");  require("swirl")})
 suppressPackageStartupMessages(if(!require("car")) {install.packages("car");  require("car")})
 suppressPackageStartupMessages(if(!require("gridExtra")) {install.packages("gridExtra");  require("gridExtra")})
+suppressPackageStartupMessages(if(!require("gridExtra")) {install.packages("gridExtra");  require("gridExtra")})
+suppressPackageStartupMessages(if(!require("purrr")) {install.packages("purrr");  require("purrr")})
